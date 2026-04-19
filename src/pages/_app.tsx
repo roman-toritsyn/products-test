@@ -13,7 +13,9 @@ export default function MyApp({
    <div
     style={
      {
-      "--background": pageProps.theme.colors.background,
+      "--pageBackground": pageProps.theme.colors.pageBackground,
+      "--primaryText": pageProps.theme.colors.primaryText,
+      "--secondaryText": pageProps.theme.colors.secondaryText,
      } as React.CSSProperties
     }
    >

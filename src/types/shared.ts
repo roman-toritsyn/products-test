@@ -1,6 +1,8 @@
 export type ThemeConfig = {
  name: string;
  colors: {
-  background: string;
+  pageBackground: string;
+  primaryText: string;
+  secondaryText: string;
  };
 };

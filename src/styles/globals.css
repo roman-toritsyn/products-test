@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 :root {
- --background: #ffffff;
+ --pageBackground: #ffffff;
+ --primaryText: #ffffff;
+ --secondaryText: #ffffff;
 }
 
 body {
@@ -10,6 +12,12 @@ body {
 
 @layer utilities {
  .bg-background {
-  background-color: var(--background);
+  background-color: var(--pageBackground);
+ }
+ .primary-text {
+  color: var(--primaryText);
+ }
+ .secondary-text {
+  color: var(--secondaryText);
  }
 }

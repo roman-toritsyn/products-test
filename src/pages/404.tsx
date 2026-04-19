@@ -7,7 +7,7 @@ export default function NotFoundPage() {
  return (
   <>
    <Head>
-    <title>404 - {theme?.name ?? "Not Found"}</title>
+    <title>404 - {theme?.name}</title>
    </Head>
 
    <div className="bg-background min-h-screen flex items-center justify-center">
