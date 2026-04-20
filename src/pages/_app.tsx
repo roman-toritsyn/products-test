@@ -30,7 +30,13 @@ export default function MyApp({
 
 MyApp.getInitialProps = async (appContext: any) => {
   const appProps = await App.getInitialProps(appContext);
-  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+  const req = appContext.ctx?.req;
+
+  const protocol = req?.headers["x-forwarded-proto"] || "http";
+  const host = req?.headers.host;
+
+  const BASE_URL = host ? `${protocol}://${host}` : "http://localhost:3000";
 
   const res = await fetch(`${BASE_URL}/api/theme-config`);
   const theme = await res.json();
