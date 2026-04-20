@@ -5,13 +5,25 @@ const PRODUCTS_URL = process.env.PRODUCTS_API_URL || "https://dummyjson.com";
 class ProductsRepository {
   async getProducts(limit: number = 12): Promise<TProductsResponse> {
     const url = `${PRODUCTS_URL}/products?limit=${limit}`;
-    const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch products: ${response.statusText}`);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
+    try {
+      const response = await fetch(url, {
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeout);
+
+      if (!response.ok) {
+        throw new Error(`Failed: ${response.status}`);
+      }
+
+      return await response.json();
+    } finally {
+      clearTimeout(timeout);
     }
-
-    return response.json();
   }
 }
 
