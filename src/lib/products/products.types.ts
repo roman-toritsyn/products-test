@@ -1,20 +1,20 @@
 export type TReview = {
- rating: number;
+  rating: number;
 };
 
 export type TProduct = {
- id: number;
- title: string;
- description: string;
- price: number;
- rating: number;
- availabilityStatus: string;
- reviews: TReview[];
- thumbnail: string;
- images: string[];
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+  availabilityStatus: string;
+  reviews: TReview[];
+  thumbnail: string;
+  images: string[];
 };
 
 export type TProductsResponse = {
- products: TProduct[];
- limit: number;
+  products: TProduct[];
+  limit: number;
 };

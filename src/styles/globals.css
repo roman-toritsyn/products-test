@@ -1,23 +1,50 @@
 @import "tailwindcss";
 
-:root {
- --pageBackground: #ffffff;
- --primaryText: #ffffff;
- --secondaryText: #ffffff;
+@layer base {
+    :root {
+        --pageBackground: #ffffff;
+        --primary: #000000;
+        --secondary: #808080;
+        --accent: #ffffff;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
 }
 
-body {
- padding: 0;
+@theme {
+    --shadow-primaryBig: 8px 8px 0px 0px var(--primary);
+    --shadow-primarySmall: 4px 4px 0px 0px var(--primary);
 }
 
 @layer utilities {
- .bg-background {
-  background-color: var(--pageBackground);
- }
- .primary-text {
-  color: var(--primaryText);
- }
- .secondary-text {
-  color: var(--secondaryText);
- }
+    .bg-background {
+        background-color: var(--pageBackground);
+    }
+    .border-primary {
+        border-color: var(--primary);
+    }
+    .text-primary {
+        color: var(--primary);
+    }
+    .text-secondary {
+        color: var(--secondary);
+    }
+    .bg-accent {
+        background-color: var(--accent);
+    }
+}
+
+.font-space-grotesk {
+    font-family: var(--font-space-grotesk);
+}
+
+.font-work-sans {
+    font-family: var(--font-work-sans);
+}
+
+.font-plus-jakarta {
+    font-family: var(--font-plus-jakarta);
 }

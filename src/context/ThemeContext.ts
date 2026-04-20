@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import type { ThemeConfig } from "@/types/shared";
 
 type ThemeContextType = {
- theme?: ThemeConfig;
+  theme?: ThemeConfig;
 };
 
 export const ThemeContext = createContext<ThemeContextType>({});
